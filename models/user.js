@@ -2,7 +2,7 @@ var db = require('../connect');
 var user = {
     getAllUsers: function(callback) {
       console.log("showing all users");
-        return db.query("Select * from users", callback);
+        return db.query("select * from users", callback);
     },
     getUserById: function(id, callback) {
         return db.query("select * from users where user_id=?", [id], callback);
@@ -12,10 +12,10 @@ var user = {
         return db.query("Insert into users values(?,?,?)", [user.id, user.first, user.last], callback);
     },
     deleteUser: function(id, callback) {
-        return db.query("delete from users where Id=?", [id], callback);
+        return db.query("delete from users where user_id=?", [id], callback);
     },
     updateUser: function(id, user, callback) {
-        return db.query("update users set Title=?,Status=? where Id=?", [user.Title, user.Status, id], callback);
+        return db.query("update users set first=?,last=? where user_id=?", [user.first, user.last, id], callback);
     }
 };
 module.exports = user;
