@@ -50,7 +50,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-var listener = app.listen(8888, function(){
+var listener = app.listen(80, function(){
     console.log('Port: ' + listener.address().port); //Listening on port 8888
 });
 
