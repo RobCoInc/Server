@@ -1,2 +1,2 @@
-# Server
-Repo for Protectron server
+# server
+[![Build Status](https://travis-ci.org/RobCoInc/server.svg?branch=master)](https://travis-ci.org/RobCoInc/server)
