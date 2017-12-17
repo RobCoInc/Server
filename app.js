@@ -24,7 +24,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -50,7 +50,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-var listener = app.listen(8888, function(){
+var listener = app.listen(80, function(){
     console.log('Port: ' + listener.address().port); //Listening on port 8888
 });
 
