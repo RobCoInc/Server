@@ -1,3 +1,7 @@
+//
+// This file handles the routing for "company" API requests.
+//
+
 var express = require('express');
 var router = express.Router();
 var company = require('../models/company');

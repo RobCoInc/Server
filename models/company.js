@@ -1,3 +1,7 @@
+//
+// This file contains functions called from routes/companys.js
+//
+
 var db = require('../connect');
 var company = {
     getAllCompanys: function(callback) {
