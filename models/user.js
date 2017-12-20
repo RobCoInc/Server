@@ -4,7 +4,7 @@ var user = {
       console.log("showing all users");
         return db.query("select * from user", callback);
     },
-    getUserByEmail: function(id, callback) {
+    getUserByEmail: function(email, callback) {
         return db.query("select * from user where email=?", [email], callback);
     },
     addUser: function(user, callback) {
