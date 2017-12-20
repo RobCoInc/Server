@@ -28,9 +28,6 @@ router.get('/:email?', function(req, res, next) {
 
 router.post('/', function(req, res) {
     console.log('REQUEST: add user to database');
-    console.log('New user ID: ' + req.body.id);
-    console.log('First: ' + req.body.first);
-    console.log('Last: ' + req.body.last);
     user.addUser(req.body, function(err, count) {
         if (err) {
             res.json(err);
