@@ -14,6 +14,11 @@ var user = {
     deleteUser: function(id, callback) {
         return db.query("delete from users where user_id=?", [id], callback);
     },
+    checkPassword: function(body, callback) {
+      console.log("Checking user: " + body.email);
+      console.log("With password: " + body.password);
+        //return db.query("delete from users where user_id=?", [id], callback);
+    },
     updateUser: function(id, user, callback) {
         return db.query("update users set first=?,last=? where user_id=?", [user.first, user.last, id], callback);
     }

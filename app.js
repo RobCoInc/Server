@@ -32,7 +32,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/login', login);
+app.use('/api/login', login);
 app.use('/api/users', users);
 app.use('/api/companys', companys);
 
