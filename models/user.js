@@ -5,7 +5,7 @@ var user = {
         return db.query("select * from user", callback);
     },
     getUserByEmail: function(email, callback) {
-        return db.query("select * from user where email=?", [email], callback);
+        return db.query("select password from user where email=?", [email], callback);
     },
     addUser: function(user, callback) {
       console.log("request to add user received. processing...");
