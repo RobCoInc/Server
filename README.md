@@ -12,13 +12,13 @@ List of current (hopefully) endpoints that are available.
 ## Table Of Contents
 1. Users
 	1. GET
-		1. [Get All Users](#getallusers)
-		2. [Get User by Email](#getuserbyemail)
-		3. [Get User by ID](#getuserbyid)
+		1. [Get All Users](#get-all-users-)
+		2. [Get User by Email](#get-user-by-email-)
+		3. [Get User by ID](#get-user-by-id-)
 	2. POST
-		1. [Add a User](#adduser)
+		1. [Add a User](#add-a-user-)
 
-## Get all users <a name="getallusers"></a>
+## Get all users
 Type: GET
 
 Description: Returns all users
@@ -27,7 +27,7 @@ Description: Returns all users
 
 `http://localhost/api/users`
 
-## Get User by Email <a name="getuserbyemail"></a>
+## Get User by Email
 Type: GET
 
 Description: Returns the user with a specified email address
@@ -40,7 +40,7 @@ Description: Returns the user with a specified email address
 
 `http://localhost/api/users/getUserByEmail/[email]`
 
-## Get User by ID <a name="getuserbyid"></a>
+## Get User by ID
 Type: GET
 
 Description: Returns the user with a specified id
@@ -53,7 +53,7 @@ Description: Returns the user with a specified id
 
 `http://localhost/api/users/getUserById/[id]`
 
-## Add a User <a name="adduser"></a>
+## Add a User
 Type: POST
 
 Description: Adds a new user to the user table
