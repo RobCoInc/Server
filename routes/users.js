@@ -5,10 +5,9 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-router.get('/:id?', function(req, res, next) {
-    if (req.params.id) {
-        console.log('REQUEST: get a single user by id');
-        user.getUserById(req.params.id, function(err, rows) {
+router.get('/:email?', function(req, res, next) {
+    if (req.params.email) {
+        user.getUserByEmail(req.params.email, function(err, rows) {
             if (err) {
                 res.json(err);
             } else {
@@ -29,9 +28,6 @@ router.get('/:id?', function(req, res, next) {
 
 router.post('/', function(req, res) {
     console.log('REQUEST: add user to database');
-    console.log('New user ID: ' + req.body.id);
-    console.log('First: ' + req.body.first);
-    console.log('Last: ' + req.body.last);
     user.addUser(req.body, function(err, count) {
         if (err) {
             res.json(err);
