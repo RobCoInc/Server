@@ -76,4 +76,14 @@ router.post('/', function(req, res) {
     });
 });
 
+router.get('/', function(req, res, next) {
+      user.getAllUsers(function(err, rows) {
+          if (err) {
+              res.json(err);
+          } else {
+              res.json(rows);
+          }
+      });
+});
+
 module.exports = router;
