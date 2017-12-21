@@ -12,11 +12,11 @@ List of current (hopefully) endpoints that are available.
 ## Table Of Contents
 1. Users
 	1. GET
-		1. [Get All Users](#get-all-users-)
-		2. [Get User by Email](#get-user-by-email-)
-		3. [Get User by ID](#get-user-by-id-)
+		1. [Get All Users](#get-all-users)
+		2. [Get User by Email](#get-user-by-email)
+		3. [Get User by ID](#get-user-by-id)
 	2. POST
-		1. [Add a User](#add-a-user-)
+		1. [Add a User](#add-a-user)
 
 ## Get all users
 Type: GET
