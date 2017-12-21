@@ -9,7 +9,16 @@ This repository contains the Node server and its endpoints provided by the Suple
 
 List of current (hopefully) endpoints that are available.
 
-## Get all users
+## Table Of Contents
+1. Users
+	1. GET
+		1. [Get All Users](#getallusers)
+		2. [Get User by Email](#getuserbyemail)
+		3. [Get User by ID](#getuserbyid)
+	2. POST
+		1. [Add a User](#adduser)
+
+## Get all users <a name="getallusers"></a>
 Type: GET
 
 Description: Returns all users
@@ -18,7 +27,7 @@ Description: Returns all users
 
 `http://localhost/api/users`
 
-## Get user by email
+## Get User by Email <a name="getuserbyemail"></a>
 Type: GET
 
 Description: Returns the user with a specified email address
@@ -29,9 +38,22 @@ Description: Returns the user with a specified email address
 
 #### URL: 
 
-`http://localhost/api/users/[email]`
+`http://localhost/api/users/getUserByEmail/[email]`
 
-## Add a user
+## Get User by ID <a name="getuserbyid"></a>
+Type: GET
+
+Description: Returns the user with a specified id
+
+#### Params: 
+
+1. ID
+
+#### URL: 
+
+`http://localhost/api/users/getUserById/[id]`
+
+## Add a User <a name="adduser"></a>
 Type: POST
 
 Description: Adds a new user to the user table
