@@ -9,7 +9,7 @@ var user = {
     },
     addUser: function(user, callback) {
       console.log("request to add user received. processing...");
-        return db.query("insert into user values(?,?,?,?,?,?,?,?,?)", [user._id, user.password, user.email, user.firstName, user.lastName, user.companyId, user.cellNumber, user.isAdmin, user.isBasic], callback);
+        return db.query("insert into user (password, email, firstName, lastName, companyId, cellNumber, isAdmin, isBasic) values(?,?,?,?,?,?,?,?)", [user.password, user.email, user.firstName, user.lastName, user.companyId, user.cellNumber, user.isAdmin, user.isBasic], callback);
     },
     deleteUser: function(id, callback) {
         return db.query("delete from user where user_id=?", [id], callback);
