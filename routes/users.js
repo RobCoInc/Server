@@ -5,7 +5,47 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-router.get('/:email?', function(req, res, next) {
+router.get('/getUserPasswordByEmail/:email?', function(req, res, next) {
+    if (req.params.email) {
+        user.getUserPasswordByEmail(req.params.email, function(err, rows) {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(rows);
+            }
+        });
+    } else {
+        user.getAllUsers(function(err, rows) {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(rows);
+            }
+        });
+    }
+});
+
+router.get('/getUserById/:id?', function(req, res, next) {
+    if (req.params.id) {
+        user.getUserById(req.params.id, function(err, rows) {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(rows);
+            }
+        });
+    } else {
+        user.getAllUsers(function(err, rows) {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(rows);
+            }
+        });
+    }
+});
+
+router.get('/getUserByEmail/:email?', function(req, res, next) {
     if (req.params.email) {
         user.getUserByEmail(req.params.email, function(err, rows) {
             if (err) {
@@ -15,7 +55,6 @@ router.get('/:email?', function(req, res, next) {
             }
         });
     } else {
-        console.log('REQUEST: get all users');
         user.getAllUsers(function(err, rows) {
             if (err) {
                 res.json(err);
@@ -35,6 +74,16 @@ router.post('/', function(req, res) {
             res.json(req.body);
         }
     });
+});
+
+router.get('/', function(req, res, next) {
+      user.getAllUsers(function(err, rows) {
+          if (err) {
+              res.json(err);
+          } else {
+              res.json(rows);
+          }
+      });
 });
 
 module.exports = router;

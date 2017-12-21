@@ -4,7 +4,13 @@ var user = {
       console.log("showing all users");
         return db.query("select * from user", callback);
     },
+    getUserById: function(id, callback) {
+        return db.query("select * from user where _id=?", [id], callback);
+    },
     getUserByEmail: function(email, callback) {
+        return db.query("select * from user where email=?", [email], callback);
+    },
+    getUserPasswordByEmail: function(email, callback) {
         return db.query("select password from user where email=?", [email], callback);
     },
     addUser: function(user, callback) {
