@@ -55,7 +55,22 @@ app.use(function(err, req, res, next) {
 });
 
 var listener = app.listen(80, function(){
-    console.log('Port: ' + listener.address().port); //Listening on port 8888
+    console.log(logTime() + 'Port: ' + listener.address().port); //Listening on port 8888
 });
+
+// global log timestamp function
+global.logTime = function(){
+  var currentdate = new Date();
+  var datetime = "[" + currentdate.getDate() + "/"
+                  + (currentdate.getMonth()+1)  + "/"
+                  + currentdate.getFullYear() + " @ "
+                  + currentdate.getHours() + ":"
+                  + currentdate.getMinutes() + ":"
+                  + currentdate.getSeconds() + "] ";
+  return datetime;
+};
+
+console.log(logTime() + 'started.'); //Listening on port 8888
+
 
 module.exports = app;
