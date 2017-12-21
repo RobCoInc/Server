@@ -47,7 +47,7 @@ router.get('/getUserById/:id?', function(req, res, next) {
 
 router.get('/getUserByEmail/:email?', function(req, res, next) {
     if (req.params.email) {
-        user.getUserById(req.params.email, function(err, rows) {
+        user.getUserByEmail(req.params.email, function(err, rows) {
             if (err) {
                 res.json(err);
             } else {
