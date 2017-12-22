@@ -7,7 +7,7 @@ This repository contains the Node server and its endpoints provided by the Suple
 
 <hr>
 
-List of current (hopefully) endpoints that are available.
+List of current (hopefully) endpoints that are available. Please see https://github.com/RobCoInc/server/issues/7 if you require another endpoint that does not exist.
 
 ## Table Of Contents
 1. Users
