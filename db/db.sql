@@ -19,13 +19,58 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `usershift`
+--
+
+CREATE TABLE `usershift` (
+  `shiftId` int(32) NOT NULL,
+  `userId` int(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `arrest`
+--
+
+CREATE TABLE `arrest` (
+  `_id` int(32) NOT NULL,
+  `reason` varchar(512) NOT NULL,
+  `complacency` int(8) NOT NULL,
+  `time` varchar(16) NOT NULL,
+  `date` varchar(16) NOT NULL,
+  `locationId` int(32) NOT NULL,
+  `descriptionId` int(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `description`
+--
+
+CREATE TABLE `description` (
+  `_id` int(32) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  `height` varchar(8) NOT NULL,
+  `weight` varchar(8) NOT NULL,
+  `eyeColor` varchar(16) NOT NULL,
+  `skinColor` varchar(16) NOT NULL,
+  `hairColor` varchar(16) NOT NULL,
+  `hairStyle` varchar(16) NOT NULL,
+  `arrestId` int(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `company`
 --
 
 CREATE TABLE `company` (
-  `_id` int(64) NOT NULL,
+  `_id` int(32) NOT NULL,
   `companyName` varchar(64) NOT NULL,
-  `secureNum` int(64) NOT NULL,
+  `secureNum` int(8) NOT NULL,
   `level` int(8) NOT NULL,
   `location` varchar(64) NOT NULL,
   `email` varchar(64) NOT NULL
@@ -38,7 +83,7 @@ CREATE TABLE `company` (
 --
 
 CREATE TABLE `location` (
-  `_id` int(64) NOT NULL,
+  `_id` int(32) NOT NULL,
   `locationName` varchar(64) NOT NULL,
   `locationCity` varchar(64) NOT NULL,
   `locationAddress` varchar(64) NOT NULL
@@ -51,12 +96,12 @@ CREATE TABLE `location` (
 --
 
 CREATE TABLE `shift` (
-  `_id` int(64) NOT NULL,
+  `_id` int(32) NOT NULL,
   `time` varchar(64) NOT NULL,
   `date` varchar(64) NOT NULL,
-  `locationId` int(64) NOT NULL,
+  `locationId` int(32) NOT NULL,
   `isClaimed` int(8) NOT NULL,
-  `userId` int(64) NOT NULL
+  `userId` int(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -66,13 +111,13 @@ CREATE TABLE `shift` (
 --
 
 CREATE TABLE `user` (
-  `_id` int(64) NOT NULL,
+  `_id` int(32) NOT NULL,
   `password` varchar(64) NOT NULL,
   `email` varchar(64) NOT NULL,
-  `firstName` varchar(64) NOT NULL,
-  `lastName` varchar(64) NOT NULL,
-  `companyId` int(64) NOT NULL,
-  `cellNumber` varchar(64) NOT NULL,
+  `firstName` varchar(32) NOT NULL,
+  `lastName` varchar(32) NOT NULL,
+  `companyId` int(32) NOT NULL,
+  `cellNumber` varchar(16) NOT NULL,
   `isAdmin` int(8) NOT NULL,
   `isBasic` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -80,6 +125,18 @@ CREATE TABLE `user` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `company`
+--
+ALTER TABLE `arrest`
+  ADD PRIMARY KEY (`_id`);
+
+--
+-- Indexes for table `company`
+--
+ALTER TABLE `description`
+  ADD PRIMARY KEY (`_id`);
 
 --
 -- Indexes for table `company`
@@ -109,6 +166,16 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `company`
+--
+ALTER TABLE `arrest`
+  MODIFY `_id` int(64) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `company`
+--
+ALTER TABLE `description`
+  MODIFY `_id` int(64) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `company`
 --
