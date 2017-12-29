@@ -9,24 +9,14 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-router.get('/:id?', function(req, res, next) {
-    if (req.params.id) {
-        company.getCompanyById(req.params.id, function(err, rows) {
-            if (err) {
-                res.json(err);
-            } else {
-                res.json(rows);
-            }
-        });
-    } else {
-        company.getAllCompanys(function(err, rows) {
-            if (err) {
-                res.json(err);
-            } else {
-                res.json(rows);
-            }
-        });
-    }
+router.get('/', function(req, res, next) {
+      company.getAllCompanys(function(err, rows) {
+          if (err) {
+              res.json(err);
+          } else {
+              res.json(rows);
+          }
+      });
 });
 
 router.post('/', function(req, res) {

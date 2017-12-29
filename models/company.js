@@ -11,7 +11,7 @@ var company = {
         return db.query("select * from company where company_id=?", [id], callback);
     },
     addCompany: function(company, callback) {
-        return db.query("Insert into company values(?,?,?)", [company.id, company.first, company.last], callback);
+        return db.query("insert into company (companyName, secureNum, level, location, email)", [company.companyName, company.secureNum, company.level, company.location, company.email], callback);
     },
     deleteCompany: function(id, callback) {
         return db.query("delete from company where company_id=?", [id], callback);
