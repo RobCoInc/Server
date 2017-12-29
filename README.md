@@ -17,8 +17,13 @@ List of current (hopefully) endpoints that are available. Please see https://git
 		3. [Get User by ID](#get-user-by-id)
 	2. POST
 		1. [Add a User](#add-a-user)
+2. Companys
+    1. GET
+        1. [Get All Companys](#get-all-companys)
+    2. POST
+        1. [Add a Company](#add-a-company)
 
-## Get all users
+## Get all Users
 Type: GET
 
 Description: Returns all users
@@ -73,3 +78,30 @@ Description: Adds a new user to the user table
 #### URL: 
 
 `http://localhost/api/users`
+
+## Get all Companys
+Type: GET
+
+Description: Returns all companys
+
+#### URL: 
+
+`http://localhost/api/companys`
+
+## Add a Company
+Type: POST
+
+Description: Adds a new company to the company table
+
+#### Params: 
+
+1. _id (Not required, auto increment is used)
+2. companyName
+3. secureNum
+4. level
+5. location
+6. email
+
+#### URL: 
+
+`http://localhost/api/companys`
