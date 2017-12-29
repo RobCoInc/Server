@@ -40,7 +40,8 @@ CREATE TABLE `arrest` (
   `time` varchar(16) NOT NULL,
   `date` varchar(16) NOT NULL,
   `locationId` int(32) NOT NULL,
-  `descriptionId` int(32) NOT NULL
+  `descriptionId` int(32) NOT NULL,
+  `userId` int(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
