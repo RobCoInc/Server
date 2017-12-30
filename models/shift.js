@@ -16,6 +16,9 @@ var shift = {
     deleteShift: function(id, callback) {
         return db.query("delete from shift where _id=?", [id], callback);
     },
+    getShiftsUnnasignedByCompanyId: function(companyId, callback) {
+        return db.query("select * from shift where companyId=? and icClaimed=0", [companyId], callback);
+    },
     updateShift: function(id, shift, callback) {
         return db.query("update shift set first=?,last=? where company_id=?", [shift.first, shift.last, id], callback);
     }

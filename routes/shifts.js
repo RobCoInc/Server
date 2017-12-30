@@ -19,6 +19,16 @@ router.get('/', function(req, res, next) {
       });
 });
 
+router.get('/getShiftsUnnasignedByCompanyId/:companyId?', function(req, res, next) {
+      shift.getShiftsUnnasignedByCompanyId(req.params.companyId, function(err, rows) {
+          if (err) {
+              res.json(err);
+          } else {
+              res.json(rows);
+          }
+      });
+});
+
 router.post('/', function(req, res) {
     shift.addShift(req.body, function(err, count) {
         if (err) {
