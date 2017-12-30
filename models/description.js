@@ -11,7 +11,7 @@ var description = {
         return db.query("select * from description where _id=?", [id], callback);
     },
     addDescription: function(description, callback) {
-        return db.query("insert into description (name, height, weight, eyeColor, skinColor, hairColor, hairStyle, arrestId)", [description.name, description.height, description.weight, description.eyeColor, description.skinColor, description.hairColor, description.hairStyle, description.arrestId], callback);
+        return db.query("insert into description (name, height, weight, eyeColor, skinColor, hairColor, hairStyle)", [description.name, description.height, description.weight, description.eyeColor, description.skinColor, description.hairColor, description.hairStyle], callback);
     },
     deleteDescription: function(id, callback) {
         return db.query("delete from description where _id=?", [id], callback);
