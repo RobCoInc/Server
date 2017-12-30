@@ -18,6 +18,9 @@ var location = {
     },
     updateLocation: function(id, location, callback) {
         return db.query("update location set first=?,last=? where company_id=?", [location.first, location.last, id], callback);
+    },
+    getLocationsByCompanyId: function(companyId, callback) {
+        return db.query("select * from location where companyId=?", [companyId], callback);
     }
 };
 module.exports = location;
