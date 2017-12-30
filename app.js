@@ -25,6 +25,9 @@ var login = require('./routes/login');
 var users = require('./routes/users');
 var companys = require('./routes/companys');
 var arrests = require('./routes/arrests');
+var location = require('./routes/location');
+var shift = require('./routes/shift');
+var description = require('./routes/description');
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -37,6 +40,9 @@ app.use('/api/login', login);
 app.use('/api/users', users);
 app.use('/api/companys', companys);
 app.use('/api/arrests', arrests);
+app.use('/api/location', location);
+app.use('/api/shift', shift);
+app.use('/api/description', description);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
