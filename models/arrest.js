@@ -18,6 +18,9 @@ var arrest = {
     },
     updateArrest: function(id, arrest, callback) {
         return db.query("update arrest set first=?,last=? where company_id=?", [arrest.first, arrest.last, id], callback);
+    },
+    getArrestsByUserId: function(id, callback) {
+        return db.query("select * from arrests where userId=?", [id], callback);
     }
 };
 module.exports = arrest;
