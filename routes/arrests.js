@@ -31,6 +31,18 @@ router.get('/getArrestsByUserId/:id?', function(req, res, next) {
     }
 });
 
+router.get('/getArrestsByCompanyId/:id?', function(req, res, next) {
+  if (req.params.email) {
+      arrest.getArrestsByCompanyId(req.params.id, function(err, rows) {
+          if (err) {
+              res.json(err);
+          } else {
+              res.json(rows);
+          }
+      });
+    }
+});
+
 router.post('/', function(req, res) {
     arrest.addArrest(req.body, function(err, count) {
         if (err) {
